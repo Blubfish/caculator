@@ -1,5 +1,5 @@
 //
-//  ConverterApp.swift
+//  Converter.swift
 //  Converter
 //
 //  Created by Damian Myrda on 9/18/23.
@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct ConverterApp: App {
+struct Converter: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DecimalToBinary()
         }
     }
+    
 }
