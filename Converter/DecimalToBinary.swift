@@ -1,10 +1,3 @@
-//
-//  DecimalToBinary.swift
-//  Converter
-//
-//  Created by Damian Myrda on 9/18/23.
-//
-
 import SwiftUI
 
 func DecimalToBinary(input: String) -> String {

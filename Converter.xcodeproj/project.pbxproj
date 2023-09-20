@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC93B1632ABB4D8900557411 /* BinaryToDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC93B1622ABB4D8900557411 /* BinaryToDecimal.swift */; };
 		ACC04D452AB8A52B00E4E339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC04D442AB8A52B00E4E339 /* Assets.xcassets */; };
 		ACC04D482AB8A52B00E4E339 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC04D472AB8A52B00E4E339 /* Preview Assets.xcassets */; };
 		ACC04D522AB8A52B00E4E339 /* ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC04D512AB8A52B00E4E339 /* ConverterTests.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC93B1622ABB4D8900557411 /* BinaryToDecimal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryToDecimal.swift; sourceTree = "<group>"; };
 		ACC04D3D2AB8A52A00E4E339 /* Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Converter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC04D442AB8A52B00E4E339 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACC04D472AB8A52B00E4E339 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				ACC04D462AB8A52B00E4E339 /* Preview Content */,
 				ACC04D6A2AB8A55F00E4E339 /* Converter.swift */,
 				ACC04D6C2AB8A57C00E4E339 /* DecimalToBinary.swift */,
+				AC93B1622ABB4D8900557411 /* BinaryToDecimal.swift */,
 			);
 			path = Converter;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC93B1632ABB4D8900557411 /* BinaryToDecimal.swift in Sources */,
 				ACC04D6B2AB8A55F00E4E339 /* Converter.swift in Sources */,
 				ACC04D6D2AB8A57C00E4E339 /* DecimalToBinary.swift in Sources */,
 			);

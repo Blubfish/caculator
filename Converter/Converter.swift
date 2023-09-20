@@ -1,18 +1,13 @@
-//
-//  Converter.swift
-//  Converter
-//
-//  Created by Damian Myrda on 9/18/23.
-//
-
 import SwiftUI
 
 enum From {
+    case Binary
     case Decimal
 }
 
 enum To {
     case Binary
+    case Decimal
 }
 
 @main
@@ -27,6 +22,9 @@ struct Converter: App {
             VStack {
                 HStack {
                     Menu("From") {
+                        Button("Binary", action: {
+                            self.from = .Binary
+                        })
                         Button("Decimal", action: {
                             self.from = .Decimal
                         })
@@ -36,21 +34,35 @@ struct Converter: App {
                         Button("Binary", action: {
                             self.to = .Binary
                         })
+                        Button("Decimal", action: {
+                            self.to = .Decimal
+                        })
                     }
                 }
                 HStack {
                     TextField({ () -> String in
                         switch self.from {
+                        case .Binary:
+                            return "binary"
                         case .Decimal:
                             return "decimal"
                         }
                     }(), text: self.$input)
                     .onSubmit {
                         switch self.from {
+                        case.Binary:
+                            switch self.to {
+                            case .Binary:
+                                self.output = self.input
+                            case .Decimal:
+                                self.output = BinaryToDecimal(input: self.input)
+                            }
                         case .Decimal:
                             switch self.to {
                             case .Binary:
                                 self.output = DecimalToBinary(input: self.input)
+                            case .Decimal:
+                                self.output = self.input
                             }
                         }
                     }
@@ -59,6 +71,8 @@ struct Converter: App {
                             switch self.to {
                             case .Binary:
                                 return "binary"
+                            case .Decimal:
+                                return "decimal"
                             }
                         }
                         return self.output
