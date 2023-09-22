@@ -15,7 +15,44 @@ struct Converter: App {
     @State var from: From = .Decimal
     @State var to: To = .Binary
     @State var input: String = ""
+    @State var binary: [Bool] = [] // big endian
     @State var output: String = ""
+    
+    func parse() {
+        self.binary = []
+        switch self.from {
+        case.Binary:
+            for bit in self.input.reversed() {
+                if let bit = Int(String(bit)) {
+                    if bit == 0 {
+                        self.binary.append(false)
+                    } else if bit == 1 {
+                        self.binary.append(true)
+                    }
+                }
+            }
+        case .Decimal:
+            if let decimal = Int(self.input) {
+                self.binary = DecimalToBinary(decimal: decimal)
+            }
+        }
+    }
+    
+    func display() {
+        self.output = ""
+        switch self.to {
+        case .Binary:
+            for bit in self.binary.reversed() {
+                if bit {
+                    self.output += "1"
+                } else {
+                    self.output += "0"
+                }
+            }
+        case .Decimal:
+            self.output = String(BinaryToDecimal(binary: self.binary))
+        }
+    }
     
     var body: some Scene {
         WindowGroup {
@@ -49,22 +86,8 @@ struct Converter: App {
                         }
                     }(), text: self.$input)
                     .onSubmit {
-                        switch self.from {
-                        case.Binary:
-                            switch self.to {
-                            case .Binary:
-                                self.output = self.input
-                            case .Decimal:
-                                self.output = BinaryToDecimal(input: self.input)
-                            }
-                        case .Decimal:
-                            switch self.to {
-                            case .Binary:
-                                self.output = DecimalToBinary(input: self.input)
-                            case .Decimal:
-                                self.output = self.input
-                            }
-                        }
+                        self.parse()
+                        self.display()
                     }
                     TextField({ () -> String in
                         if output.isEmpty {
