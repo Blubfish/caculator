@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC2DD8812AC47A560066153B /* Hexadecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2DD8802AC47A560066153B /* Hexadecimal.swift */; };
+		AC2DD8852AC47A7F0066153B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2DD8842AC47A7F0066153B /* Utilities.swift */; };
 		ACC04D452AB8A52B00E4E339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC04D442AB8A52B00E4E339 /* Assets.xcassets */; };
 		ACC04D482AB8A52B00E4E339 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC04D472AB8A52B00E4E339 /* Preview Assets.xcassets */; };
 		ACC04D522AB8A52B00E4E339 /* ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC04D512AB8A52B00E4E339 /* ConverterTests.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC2DD8802AC47A560066153B /* Hexadecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexadecimal.swift; sourceTree = "<group>"; };
+		AC2DD8842AC47A7F0066153B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		ACC04D3D2AB8A52A00E4E339 /* Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Converter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC04D442AB8A52B00E4E339 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACC04D472AB8A52B00E4E339 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				ACC04D462AB8A52B00E4E339 /* Preview Content */,
 				ACC04D6A2AB8A55F00E4E339 /* Converter.swift */,
 				ACC6026F2ABDF0FA00884073 /* Decimal.swift */,
+				AC2DD8802AC47A560066153B /* Hexadecimal.swift */,
+				AC2DD8842AC47A7F0066153B /* Utilities.swift */,
 			);
 			path = Converter;
 			sourceTree = "<group>";
@@ -258,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC2DD8812AC47A560066153B /* Hexadecimal.swift in Sources */,
 				ACC04D6B2AB8A55F00E4E339 /* Converter.swift in Sources */,
+				AC2DD8852AC47A7F0066153B /* Utilities.swift in Sources */,
 				ACC602702ABDF0FA00884073 /* Decimal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

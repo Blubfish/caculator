@@ -3,15 +3,54 @@ import SwiftUI
 enum From {
     case Binary
     case Decimal
+    case Hexadecimal
+    
+    func name() -> String {
+        switch self {
+        case .Binary:
+            return "binary"
+        case .Decimal:
+            return "decimal"
+        case .Hexadecimal:
+            return "hexadecimal"
+        }
+    }
 }
 
 enum To {
     case Binary
     case Decimal
+    case Hexadecimal
+    
+    func name() -> String {
+        switch self {
+        case .Binary:
+            return "binary"
+        case .Decimal:
+            return "decimal"
+        case .Hexadecimal:
+            return "hexadecimal"
+        }
+    }
+}
+
+enum Endianess {
+    case Little
+    case Big
+    
+    func name() -> String {
+        switch self {
+        case .Big:
+            return "big"
+        case .Little:
+            return "little"
+        }
+    }
 }
 
 @main
 struct Converter: App {
+    @State var endianess: Endianess = .Big
     @State var from: From = .Decimal
     @State var to: To = .Binary
     @State var input: String = ""
@@ -31,10 +70,15 @@ struct Converter: App {
                     }
                 }
             }
+            if self.endianess == .Little {
+                self.binary = self.binary.reversed()
+            }
         case .Decimal:
             if let decimal = Int(self.input) {
                 self.binary = DecimalToBinary(decimal: decimal)
             }
+        case .Hexadecimal:
+            self.binary = HexadecimalToBinary(hexadecimal: self.input)
         }
     }
     
@@ -42,16 +86,34 @@ struct Converter: App {
         self.output = ""
         switch self.to {
         case .Binary:
-            for bit in self.binary.reversed() {
-                if bit {
-                    self.output += "1"
-                } else {
-                    self.output += "0"
+            switch self.endianess {
+            case .Big:
+                for bit in self.binary.reversed() {
+                    if bit {
+                        self.output += "1"
+                    } else {
+                        self.output += "0"
+                    }
+                }
+            case .Little:
+                for bit in self.binary {
+                    if bit {
+                        self.output += "1"
+                    } else {
+                        self.output += "0"
+                    }
                 }
             }
         case .Decimal:
             self.output = String(BinaryToDecimal(binary: self.binary))
+        case .Hexadecimal:
+            self.output = BinaryToHexadecimal(binary: self.binary)
         }
+    }
+    
+    func update() {
+        self.parse()
+        self.display()
     }
     
     var body: some Scene {
@@ -61,42 +123,55 @@ struct Converter: App {
                     Menu("From") {
                         Button("Binary", action: {
                             self.from = .Binary
+                            self.update()
                         })
                         Button("Decimal", action: {
                             self.from = .Decimal
+                            self.update()
+                        })
+                        Button("Hexadecimal", action: {
+                            self.from = .Hexadecimal
+                            self.update()
                         })
                     }
+                    .multilineTextAlignment(.leading)
+                    Spacer()
+                    Menu("Endianess") {
+                        Button("Little", action: {
+                            self.endianess = .Little
+                            self.update()
+                        })
+                        Button("Big", action: {
+                            self.endianess = .Big
+                            self.update()
+                        })
+                    }
+                    .multilineTextAlignment(.center)
                     Spacer()
                     Menu("To") {
                         Button("Binary", action: {
                             self.to = .Binary
+                            self.update()
                         })
                         Button("Decimal", action: {
                             self.to = .Decimal
+                            self.update()
+                        })
+                        Button("Hexadecimal", action: {
+                            self.to = .Hexadecimal
+                            self.update()
                         })
                     }
+                    .multilineTextAlignment(.trailing)
                 }
                 HStack {
-                    TextField({ () -> String in
-                        switch self.from {
-                        case .Binary:
-                            return "binary"
-                        case .Decimal:
-                            return "decimal"
-                        }
-                    }(), text: self.$input)
+                    TextField(self.from.name(), text: self.$input)
                     .onSubmit {
-                        self.parse()
-                        self.display()
+                        self.update()
                     }
                     TextField({ () -> String in
                         if output.isEmpty {
-                            switch self.to {
-                            case .Binary:
-                                return "binary"
-                            case .Decimal:
-                                return "decimal"
-                            }
+                            return self.to.name()
                         }
                         return self.output
                     }(), text: self.$output)

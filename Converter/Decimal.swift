@@ -3,7 +3,7 @@ import SwiftUI
 func BinaryToDecimal(binary: [Bool]) -> Int {
     var position = 0.0
     var output = 0
-    for num in binary.reversed() {
+    for num in binary {
         if num {
             output += Int(pow(2.0, position))
         }
