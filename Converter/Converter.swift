@@ -178,6 +178,9 @@ struct Converter: App {
                     .multilineTextAlignment(.trailing)
                     .disabled(true)
                 }
+                Button("Convert", action: {() -> Void in
+                    self.update()
+                })
             }
             .padding()
         }
