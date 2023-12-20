@@ -60,7 +60,7 @@ struct Converter: App {
     func parse() {
         self.binary = []
         switch self.from {
-        case.Binary:
+        case .Binary:
             for bit in self.input.reversed() {
                 if let bit = Int(String(bit)) {
                     if bit == 0 {
