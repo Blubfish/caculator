@@ -11,9 +11,6 @@
 		AC2DD8852AC47A7F0066153B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2DD8842AC47A7F0066153B /* Utilities.swift */; };
 		ACC04D452AB8A52B00E4E339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC04D442AB8A52B00E4E339 /* Assets.xcassets */; };
 		ACC04D482AB8A52B00E4E339 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC04D472AB8A52B00E4E339 /* Preview Assets.xcassets */; };
-		ACC04D522AB8A52B00E4E339 /* ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC04D512AB8A52B00E4E339 /* ConverterTests.swift */; };
-		ACC04D5C2AB8A52B00E4E339 /* ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC04D5B2AB8A52B00E4E339 /* ConverterUITests.swift */; };
-		ACC04D5E2AB8A52B00E4E339 /* ConverterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC04D5D2AB8A52B00E4E339 /* ConverterUITestsLaunchTests.swift */; };
 		ACC04D6B2AB8A55F00E4E339 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC04D6A2AB8A55F00E4E339 /* Converter.swift */; };
 		ACC602702ABDF0FA00884073 /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6026F2ABDF0FA00884073 /* Decimal.swift */; };
 /* End PBXBuildFile section */
@@ -42,10 +39,7 @@
 		ACC04D442AB8A52B00E4E339 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACC04D472AB8A52B00E4E339 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACC04D4D2AB8A52B00E4E339 /* ConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACC04D512AB8A52B00E4E339 /* ConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterTests.swift; sourceTree = "<group>"; };
 		ACC04D572AB8A52B00E4E339 /* ConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACC04D5B2AB8A52B00E4E339 /* ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterUITests.swift; sourceTree = "<group>"; };
-		ACC04D5D2AB8A52B00E4E339 /* ConverterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ACC04D6A2AB8A55F00E4E339 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		ACC6026F2ABDF0FA00884073 /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,8 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				ACC04D3F2AB8A52A00E4E339 /* Converter */,
-				ACC04D502AB8A52B00E4E339 /* ConverterTests */,
-				ACC04D5A2AB8A52B00E4E339 /* ConverterUITests */,
 				ACC04D3E2AB8A52A00E4E339 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,23 +106,6 @@
 				ACC04D472AB8A52B00E4E339 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		ACC04D502AB8A52B00E4E339 /* ConverterTests */ = {
-			isa = PBXGroup;
-			children = (
-				ACC04D512AB8A52B00E4E339 /* ConverterTests.swift */,
-			);
-			path = ConverterTests;
-			sourceTree = "<group>";
-		};
-		ACC04D5A2AB8A52B00E4E339 /* ConverterUITests */ = {
-			isa = PBXGroup;
-			children = (
-				ACC04D5B2AB8A52B00E4E339 /* ConverterUITests.swift */,
-				ACC04D5D2AB8A52B00E4E339 /* ConverterUITestsLaunchTests.swift */,
-			);
-			path = ConverterUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC04D522AB8A52B00E4E339 /* ConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +257,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACC04D5C2AB8A52B00E4E339 /* ConverterUITests.swift in Sources */,
-				ACC04D5E2AB8A52B00E4E339 /* ConverterUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
